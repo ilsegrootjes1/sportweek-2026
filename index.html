@@ -16,237 +16,105 @@
     --za: #e91e8c;
     --bg: #f4f4f0;
     --dark: #1a1a1a;
-    --card: #ffffff;
     --border: #e0e0e0;
     --muted: #888;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--dark);
-    font-size: 14px;
-    line-height: 1.5;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--dark); font-size: 14px; line-height: 1.5; }
 
-  header {
-    background: var(--dark);
-    color: white;
-    padding: 24px 20px 20px;
-    text-align: center;
-  }
+  header { background: var(--dark); color: white; padding: 24px 20px 20px; text-align: center; }
+  header h1 { font-family: 'Bebas Neue', sans-serif; font-size: 40px; letter-spacing: 2px; line-height: 1; }
+  header p { opacity: 0.6; font-size: 13px; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
 
-  header h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 40px;
-    letter-spacing: 2px;
-    line-height: 1;
-  }
-
-  header p {
-    opacity: 0.6;
-    font-size: 13px;
-    margin-top: 4px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  /* NAV TABS */
-  .tab-nav {
-    display: flex;
-    overflow-x: auto;
-    background: var(--dark);
-    padding: 0 8px 8px;
-    gap: 4px;
-    scrollbar-width: none;
-  }
+  .tab-nav { display: flex; overflow-x: auto; background: var(--dark); padding: 0 8px 8px; gap: 4px; scrollbar-width: none; }
   .tab-nav::-webkit-scrollbar { display: none; }
-
-  .tab-btn {
-    flex-shrink: 0;
-    border: none;
-    background: rgba(255,255,255,0.1);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s;
-  }
+  .tab-btn { flex-shrink: 0; border: none; background: rgba(255,255,255,0.1); color: white; padding: 6px 12px; border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
   .tab-btn.active { background: white; color: var(--dark); }
   .tab-btn:hover:not(.active) { background: rgba(255,255,255,0.2); }
 
-  /* SECTIONS */
   .section { display: none; padding: 16px; }
   .section.active { display: block; }
 
-  /* WEEK OVERVIEW */
   .week-table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .week-table th { background: var(--dark); color: white; padding: 10px 8px; text-align: left; font-weight: 600; }
   .week-table td { padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: top; background: white; }
   .week-table tr:last-child td { border-bottom: none; }
 
-  .dag-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 11px;
-    font-weight: 700;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  .dag-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-zo { background: var(--zo); } .badge-ma { background: var(--ma); } .badge-di { background: var(--di); }
+  .badge-do { background: var(--do); } .badge-vr { background: var(--vr); } .badge-za { background: var(--za); }
 
-  .badge-zo { background: var(--zo); }
-  .badge-ma { background: var(--ma); }
-  .badge-di { background: var(--di); }
-  .badge-do { background: var(--do); }
-  .badge-vr { background: var(--vr); }
-  .badge-za { background: var(--za); }
-
-  /* DAY CARDS */
-  .day-header {
-    padding: 14px 16px;
-    border-radius: 12px;
-    color: white;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+  .day-header { padding: 14px 16px; border-radius: 12px; color: white; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
   .day-header .emoji { font-size: 28px; }
   .day-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 1px; line-height: 1; }
   .day-header .sub { font-size: 12px; opacity: 0.85; margin-top: 2px; }
 
-  .bg-zo { background: var(--zo); }
-  .bg-ma { background: var(--ma); }
-  .bg-di { background: var(--di); }
-  .bg-do { background: var(--do); }
-  .bg-vr { background: var(--vr); }
-  .bg-za { background: var(--za); }
+  .bg-zo { background: var(--zo); } .bg-ma { background: var(--ma); } .bg-di { background: var(--di); }
+  .bg-do { background: var(--do); } .bg-vr { background: var(--vr); } .bg-za { background: var(--za); }
 
-  .card {
-    background: white;
-    border-radius: 10px;
-    padding: 14px;
-    margin-bottom: 10px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-  }
+  .card { background: white; border-radius: 10px; padding: 14px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .card-title { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; color: var(--muted); }
 
-  .card-title {
-    font-weight: 700;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 10px;
-    color: var(--muted);
-  }
+  /* ACCORDION */
+  details { background: white; border-radius: 10px; margin-bottom: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); overflow: hidden; }
+  details summary { padding: 13px 14px; cursor: pointer; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); display: flex; justify-content: space-between; align-items: center; list-style: none; user-select: none; -webkit-user-select: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: '▼'; font-size: 9px; opacity: 0.4; transition: transform 0.2s; flex-shrink: 0; margin-left: 8px; }
+  details[open] summary::after { transform: rotate(180deg); }
+  details[open] summary { border-bottom: 1px solid #f0f0f0; }
+  .details-body { padding: 12px 14px 14px; }
 
-  .time-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 6px;
-  }
-
-  .time-item {
-    background: #f4f4f0;
-    border-radius: 8px;
-    padding: 8px 12px;
-    text-align: center;
-    flex: 1;
-    min-width: 80px;
-  }
+  .time-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .time-item { background: #f4f4f0; border-radius: 8px; padding: 8px 10px; text-align: center; flex: 1; min-width: 68px; }
   .time-item .time { font-family: 'Bebas Neue', sans-serif; font-size: 22px; line-height: 1; }
   .time-item .label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .time-item.hl { background: #d4edda; }
+  .time-item.hl .time { color: var(--do); }
 
   ul.rules { list-style: none; padding: 0; }
-  ul.rules li {
-    padding: 5px 0;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 13px;
-    display: flex;
-    gap: 8px;
-  }
+  ul.rules li { padding: 5px 0; border-bottom: 1px solid #f0f0f0; font-size: 13px; display: flex; gap: 8px; }
   ul.rules li:last-child { border-bottom: none; }
   ul.rules li::before { content: '→'; color: var(--muted); flex-shrink: 0; }
 
-  .alert {
-    background: #fff3cd;
-    border-left: 3px solid #f0ad4e;
-    border-radius: 0 6px 6px 0;
-    padding: 8px 10px;
-    margin-bottom: 8px;
-    font-size: 12px;
-    font-weight: 600;
-  }
+  .alert { background: #fff3cd; border-left: 3px solid #f0ad4e; border-radius: 0 6px 6px 0; padding: 8px 10px; margin-bottom: 8px; font-size: 12px; font-weight: 600; }
+  .alert.red { background: #fdecea; border-color: var(--zo); }
+  .alert.green { background: #e8f5e9; border-color: var(--do); }
 
-  .alert.red {
-    background: #fdecea;
-    border-color: var(--zo);
-  }
-
-  .alert.green {
-    background: #e8f5e9;
-    border-color: var(--do);
-  }
-
-  /* TEAM TABLE */
   .team-table { width: 100%; border-collapse: collapse; font-size: 12px; }
   .team-table th { background: #1a1a1a; color: white; padding: 8px 6px; text-align: left; font-size: 11px; }
   .team-table td { padding: 7px 6px; border-bottom: 1px solid #eee; }
   .team-table tr:last-child td { border-bottom: none; }
 
-  .in { background: #d4edda; color: #155724; border-radius: 4px; padding: 1px 6px; font-size: 11px; font-weight: 700; text-align: center; }
-  .out { background: #f8f9fa; color: #aaa; border-radius: 4px; padding: 1px 6px; font-size: 11px; text-align: center; }
-  .maybe { background: #fff3cd; color: #856404; border-radius: 4px; padding: 1px 6px; font-size: 11px; text-align: center; }
-  .avail { background: #e8f4f8; color: #0c5460; border-radius: 4px; padding: 1px 6px; font-size: 11px; text-align: center; }
+  .in { background: #d4edda; color: #155724; border-radius: 4px; padding: 1px 6px; font-size: 11px; font-weight: 700; }
+  .out { background: #f8f9fa; color: #aaa; border-radius: 4px; padding: 1px 6px; font-size: 11px; }
+  .maybe { background: #fff3cd; color: #856404; border-radius: 4px; padding: 1px 6px; font-size: 11px; }
+  .avail { background: #e8f4f8; color: #0c5460; border-radius: 4px; padding: 1px 6px; font-size: 11px; }
 
-  /* SHIRT TABLE */
   .shirt-table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .shirt-table th { background: #1a1a1a; color: white; padding: 8px 10px; text-align: left; }
   .shirt-table td { padding: 9px 10px; border-bottom: 1px solid #eee; background: white; }
   .shirt-table tr:last-child td { border-bottom: none; }
   .shirt-table .num { font-family: 'Bebas Neue', sans-serif; font-size: 20px; }
-  .shirt-extra { background: #fff3cd; }
+  .maat-badge { background: #f4f4f0; border-radius: 6px; padding: 2px 8px; font-size: 12px; font-weight: 700; }
 
-  .maat-badge {
-    background: #f4f4f0;
-    border-radius: 6px;
-    padding: 2px 8px;
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  .spel-block {
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 8px;
-    border-left: 3px solid #ddd;
-  }
+  .spel-block { background: #f9f9f9; border-radius: 8px; padding: 10px; margin-bottom: 8px; border-left: 3px solid #ddd; }
+  .spel-block:last-child { margin-bottom: 0; }
   .spel-block .spel-naam { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
   .spel-block ul { padding-left: 0; list-style: none; }
-  .spel-block ul li { font-size: 12px; color: #444; padding: 2px 0; padding-left: 12px; position: relative; }
+  .spel-block ul li { font-size: 12px; color: #444; padding: 2px 0 2px 14px; position: relative; }
   .spel-block ul li::before { content: '·'; position: absolute; left: 0; color: #999; }
 
-  .border-zo { border-left-color: var(--zo); }
-  .border-ma { border-left-color: var(--ma); }
-  .border-di { border-left-color: var(--di); }
-  .border-do { border-left-color: var(--do); }
-  .border-vr { border-left-color: var(--vr); }
-  .border-za { border-left-color: var(--za); }
+  .border-zo { border-left-color: var(--zo); } .border-ma { border-left-color: var(--ma); }
+  .border-di { border-left-color: var(--di); } .border-do { border-left-color: var(--do); }
+  .border-vr { border-left-color: var(--vr); } .border-za { border-left-color: var(--za); }
 
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
-  h3.section-sub { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin: 14px 0 8px; }
-
-  .disclaimer { font-size: 11px; color: var(--muted); background: #f9f9f9; border-radius: 6px; padding: 8px; margin-top: 8px; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+  .chip-row span { padding: 4px 10px; }
+  .note { font-size: 11px; color: var(--muted); margin-top: 8px; }
+  .highlight-card { border: 2px solid var(--za); }
 </style>
 </head>
 <body>
@@ -257,92 +125,76 @@
 </header>
 
 <nav class="tab-nav">
-  <button class="tab-btn active" onclick="showTab('overzicht')">📅 Overzicht</button>
-  <button class="tab-btn" onclick="showTab('zo')">🏐 Tsjoekbal</button>
-  <button class="tab-btn" onclick="showTab('ma')">🚴 Fit Challenge</button>
-  <button class="tab-btn" onclick="showTab('di')">🎾 Tennis</button>
-  <button class="tab-btn" onclick="showTab('do')">🏃 Obstacle</button>
-  <button class="tab-btn" onclick="showTab('vr')">🏅 Alleskunner</button>
-  <button class="tab-btn" onclick="showTab('za')">🌍 Zeskamp</button>
-  <button class="tab-btn" onclick="showTab('indeling')">👥 Indeling</button>
-  <button class="tab-btn" onclick="showTab('shirts')">👕 Shirts</button>
+  <button class="tab-btn active" onclick="showTab('overzicht',this)">📅 Overzicht</button>
+  <button class="tab-btn" onclick="showTab('zo',this)">🏐 Tsjoekbal</button>
+  <button class="tab-btn" onclick="showTab('ma',this)">🚴 Fit Challenge</button>
+  <button class="tab-btn" onclick="showTab('di',this)">🎾 Tennis</button>
+  <button class="tab-btn" onclick="showTab('do',this)">🏃 Obstacle</button>
+  <button class="tab-btn" onclick="showTab('vr',this)">🏅 Alleskunner</button>
+  <button class="tab-btn" onclick="showTab('za',this)">🌍 Zeskamp</button>
+  <button class="tab-btn" onclick="showTab('indeling',this)">👥 Indeling</button>
+  <button class="tab-btn" onclick="showTab('shirts',this)">👕 Shirts</button>
 </nav>
 
 <!-- OVERZICHT -->
 <div id="overzicht" class="section active">
   <div class="card">
     <div class="card-title">Ons team</div>
-    <div style="margin-bottom:6px">
-      <div style="font-size:16px;font-weight:700">Nieuwe ronde, nieuwe kansen</div>
-      <div style="font-size:12px;color:var(--muted);margin-top:4px">Max · Dylan · Job · Nout · Jan · Veerle · Eelke · Juliette · Ilse · Finet · Sven</div>
-    </div>
+    <div style="font-size:16px;font-weight:700;margin-bottom:4px">Nieuwe ronde, nieuwe kansen</div>
+    <div style="font-size:12px;color:var(--muted)">Max · Dylan · Job · Nout · Jan · Veerle · Eelke · Juliette · Ilse · Finet · Sven · Alek</div>
   </div>
 
   <div class="card">
     <div class="card-title">Weekschema</div>
     <table class="week-table">
-      <thead>
-        <tr>
-          <th>Dag</th>
-          <th>Onderdeel</th>
-          <th>Coach</th>
-          <th>Start</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Dag</th><th>Onderdeel</th><th>Coach</th><th>Start</th></tr></thead>
       <tbody>
         <tr>
           <td><span class="dag-badge badge-zo">Zo 14/6</span></td>
-          <td><strong>Tsjoekbal</strong><br><span style="color:var(--muted);font-size:11px">Lacom'91, Noord-Scharwoude</span></td>
-          <td>11:30</td>
-          <td>12:30</td>
+          <td><strong>Tsjoekbal</strong><br><span style="font-size:11px;color:var(--muted)">Lacom'91, Noord-Scharwoude</span></td>
+          <td>11:30</td><td>12:30</td>
         </tr>
         <tr>
           <td><span class="dag-badge badge-ma">Ma 15/6</span></td>
-          <td><strong>Fit Challenge</strong><br><span style="color:var(--muted);font-size:11px">CSV Bol, Broek op Langedijk</span></td>
-          <td>18:30</td>
-          <td>19:00</td>
+          <td><strong>Fit Challenge</strong><br><span style="font-size:11px;color:var(--muted)">CSV Bol, Broek op Langedijk</span></td>
+          <td>18:30</td><td>19:00</td>
         </tr>
         <tr>
           <td><span class="dag-badge badge-di">Di 16/6</span></td>
-          <td><strong>Tennis Challenge</strong><br><span style="color:var(--muted);font-size:11px">TV Tulp, Oudkarspel</span></td>
-          <td>18:30</td>
-          <td>19:00</td>
+          <td><strong>Tennis Challenge</strong><br><span style="font-size:11px;color:var(--muted)">TV Tulp, Oudkarspel</span></td>
+          <td>18:30</td><td>19:00</td>
         </tr>
         <tr>
           <td><span class="dag-badge badge-do">Do 18/6</span></td>
-          <td><strong>Obstacle Run</strong><br><span style="color:var(--muted);font-size:11px">De Hoeverij, Wagenweg 2a, Oudkarspel</span></td>
-          <td>—</td>
-          <td>19:00</td>
+          <td><strong>Obstacle Run</strong><br><span style="font-size:11px;color:var(--muted)">De Hoeverij, Wagenweg 2a, Oudkarspel</span></td>
+          <td>—</td><td style="color:var(--do);font-weight:700">19:12 ★</td>
         </tr>
         <tr>
           <td><span class="dag-badge badge-vr">Vr 19/6</span></td>
-          <td><strong>De Alleskunner</strong><br><span style="color:var(--muted);font-size:11px">TC Langedijk, Zuid-Scharwoude</span></td>
-          <td>18:30</td>
-          <td>19:00</td>
+          <td><strong>De Alleskunner</strong><br><span style="font-size:11px;color:var(--muted)">TC Langedijk, Zuid-Scharwoude</span></td>
+          <td>18:30</td><td>19:00</td>
         </tr>
         <tr>
           <td><span class="dag-badge badge-za">Za 20/6</span></td>
-          <td><strong>Zeskamp Expeditie</strong><br><span style="color:var(--muted);font-size:11px">DTS, Oudkarspel</span></td>
-          <td>12:30</td>
-          <td>13:30</td>
+          <td><strong>Zeskamp Expeditie</strong><br><span style="font-size:11px;color:var(--muted)">DTS, Oudkarspel</span></td>
+          <td>12:30</td><td>13:30</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="card">
-    <div class="card-title">⚠️ Algemene aandachtspunten</div>
-    <div class="alert red">Risicoformulier + opgaveformulier inleveren bij coachoverleg. Zo/ma: voor aanvang Tsjoekbal. Daarna: dag ervoor vóór 20:00. Te laat = 1 punt aftrek!</div>
+    <div class="card-title">⚠️ Algemeen</div>
+    <div class="alert red">Risicoformulier + opgaveformulier bij coachoverleg. Zo/ma: voor Tsjoekbal. Daarna: dag ervoor vóór 20:00. Te laat = 1 punt aftrek!</div>
     <ul class="rules">
       <li>Elk onderdeel: 8 deelnemers, min. 3 vrouwen</li>
       <li>Max 2 reserves op formulier (1 dame, 1 heer)</li>
-      <li>Allen hetzelfde shirt (identiek model, niet alleen kleur)</li>
+      <li>Allen hetzelfde shirt (identiek model)</li>
       <li>Zwemdiploma verplicht: Obstacle Run + Zeskamp</li>
       <li>Alcohol verboden tijdens activiteiten</li>
-      <li>Scheidsrechter beslist altijd — niet discussiëren</li>
+      <li>Scheidsrechter beslist altijd</li>
     </ul>
   </div>
-
 </div>
 
 <!-- TSJOEKBAL -->
@@ -356,66 +208,64 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Tijden</div>
     <div class="time-row">
       <div class="time-item"><div class="time">11:30</div><div class="label">Coachoverleg</div></div>
-      <div class="time-item"><div class="time">12:30</div><div class="label">Start</div></div>
-      <div class="time-item"><div class="time">15:30</div><div class="label">Einde / Afterparty</div></div>
+      <div class="time-item hl"><div class="time">12:30</div><div class="label">Start</div></div>
+      <div class="time-item"><div class="time">15:30</div><div class="label">Einde + afterparty</div></div>
     </div>
-    <div style="margin-top:8px;font-size:12px;color:var(--muted)">Programma online: mijnToernooi.info/36373</div>
+    <div class="note" style="margin-top:8px">Live programma: mijnToernooi.info/36373</div>
   </div>
 
-  <div class="card">
-    <div class="card-title">Wie doet mee</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px">
-      <span class="in" style="padding:4px 10px">Dylan</span>
-      <span class="in" style="padding:4px 10px">Job</span>
-      <span class="in" style="padding:4px 10px">Nout</span>
-      <span class="in" style="padding:4px 10px">Jan</span>
-      <span class="in" style="padding:4px 10px">Eelke</span>
-      <span class="in" style="padding:4px 10px">Ilse</span>
-      <span class="in" style="padding:4px 10px">Finet</span>
-      <span class="in" style="padding:4px 10px">Sven</span>
+  <div class="alert">Bij slecht weer: Sporthal Geestmerambacht — <strong>geen zwarte zolen!</strong></div>
+
+  <details open>
+    <summary>👥 Wie doet mee</summary>
+    <div class="details-body">
+      <div class="chip-row">
+        <span class="in">Dylan</span><span class="in">Job</span><span class="in">Nout</span><span class="in">Jan</span>
+        <span class="in">Eelke</span><span class="in">Ilse</span><span class="in">Finet</span><span class="in">Sven</span>
+      </div>
+      <div class="note">Beschikbaar: Max · Niet: Veerle, Juliette</div>
     </div>
-    <div style="font-size:11px;color:var(--muted)">Beschikbaar: Max · Niet: Veerle, Juliette</div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">📦 Meenemen</div>
-    <ul class="rules">
-      <li>Sportkleding + buitenschoenen</li>
-      <li>Bij slecht weer in Sporthal Geestmerambacht: geen zwarte zolen!</li>
-    </ul>
-  </div>
+  <details>
+    <summary>📋 Spelregels</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>4 spelers in het veld, <strong>min. 2 vrouwen</strong></li>
+        <li>Wisselen bij achterlijnen — eerst uit, dan in</li>
+        <li>Max <strong>3 stappen</strong> met bal · niet stuiteren</li>
+        <li>Gooien in tjoek (cirkel niet betreden) + vangen = <strong>1 punt</strong></li>
+        <li>Na punt: bal over middellijn voor aanvalsrecht</li>
+        <li>Verdediging: onderscheppen + bal over middellijn = aanvalsrecht</li>
+        <li>Bal over achterlijn = tegenpartij, herstart middenlijn</li>
+        <li>Overtreding: 3 meter afstand · geen fysiek contact</li>
+        <li>Wedstrijdduur: <strong>9 minuten</strong> + 1 min wisseltijd</li>
+      </ul>
+    </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Spelregels</div>
-    <ul class="rules">
-      <li>4 spelers in het veld, <strong>min. 2 vrouwen</strong></li>
-      <li>Wisselen mag tijdens spel bij de achterlijnen (eerst uit, dan in)</li>
-      <li>Max <strong>3 stappen</strong> met bal in de hand</li>
-      <li>Niet stuiteren</li>
-      <li>Gooien in tjoek (cirkel niet betreden) + vangen door teamgenoot = <strong>1 punt</strong></li>
-      <li>Na punt: bal over de middellijn voor recht van aanval</li>
-      <li>Verdediging: onderscheppen en bal over middellijn = recht van aanval</li>
-      <li>Bal over achterlijn = tegenpartij, herstart vanaf middenlijn</li>
-      <li>Overtreding: 3 meter afstand houden</li>
-      <li>Geen fysiek contact</li>
-      <li>Wedstrijdduur: <strong>9 minuten</strong> (1 min wisseltijd)</li>
-    </ul>
-  </div>
+  <details>
+    <summary>🏆 Structuur &amp; finales</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>6 poules · na poulefase: finales</li>
+        <li>Gelijkspel buiten poule: golden goal (max 3 min extra)</li>
+        <li>Gelijke shirtkleur: last genoemde team krijgt hesjes</li>
+      </ul>
+    </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Structuur</div>
-    <ul class="rules">
-      <li>6 poules van teams</li>
-      <li>Na poulefase: finales</li>
-      <li>Gelijkspel buiten poulefase: golden goal (max 3 min extra)</li>
-      <li>Gelijkspelende kleur shirts: laatstgenoemde team speelt met hesjes</li>
-    </ul>
-  </div>
-
-  <div class="alert red">Kleding: sportkleding + buitenschoenen. Bij slecht weer in Sporthal Geestmerambacht — geen zwarte zolen in de hal!</div>
+  <details>
+    <summary>📦 Meenemen</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>Sportkleding + buitenschoenen</li>
+        <li>Bij hal: geen zwarte zolen!</li>
+      </ul>
+    </div>
+  </details>
 </div>
 
 <!-- FIT CHALLENGE -->
@@ -429,82 +279,76 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Tijden (Shift 1 = wij ✓)</div>
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--ma);margin-bottom:8px">Wij spelen Shift 1</div>
     <div class="time-row">
-      <div class="time-item"><div class="time">18:30</div><div class="label">Coachoverleg + melden</div></div>
+      <div class="time-item"><div class="time">18:30</div><div class="label">Coach melden</div></div>
       <div class="time-item"><div class="time">18:45</div><div class="label">Teams aanwezig</div></div>
-      <div class="time-item"><div class="time">19:00</div><div class="label">Start</div></div>
+      <div class="time-item hl"><div class="time">19:00</div><div class="label">Start shift 1</div></div>
     </div>
-    <div style="margin-top:8px;font-size:12px;color:var(--muted)">Shift 2 start ±20:00 · DJ Danny Bolten 21:30 · Prijsuitreiking ±22:00</div>
+    <div class="note" style="margin-top:8px">Shift 2 ±20:00 · DJ Danny Bolten 21:30 · Prijsuitreiking ±22:00</div>
   </div>
 
-  <div class="alert red">⏰ Startlijst vóór 12:00 uur op 15 juni mailen naar <strong>ac-bol@outlook.com</strong> (volgorde loper/fietser opgeven)</div>
+  <div class="alert red">⏰ Startlijst vóór <strong>12:00 op 15 juni</strong> mailen naar <strong>ac-bol@outlook.com</strong> — volgorde loper + fietser opgeven</div>
 
-  <div class="card">
-    <div class="card-title">Wie doet mee</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px">
-      <span class="in" style="padding:4px 10px">Max</span>
-      <span class="in" style="padding:4px 10px">Dylan</span>
-      <span class="in" style="padding:4px 10px">Nout</span>
-      <span class="in" style="padding:4px 10px">Jan</span>
-      <span class="in" style="padding:4px 10px">Juliette</span>
-      <span class="in" style="padding:4px 10px">Ilse</span>
-      <span class="in" style="padding:4px 10px">Finet</span>
-      <span class="in" style="padding:4px 10px">Sven</span>
+  <details open>
+    <summary>📋 Onze startindeling</summary>
+    <div class="details-body">
+      <table class="team-table">
+        <thead><tr><th>Ronde</th><th>🏃 Hardlopen</th><th>🚴 Fietsen</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Max</td><td>Juliette</td></tr>
+          <tr><td>2</td><td>Dylan</td><td>Ilse</td></tr>
+          <tr><td>3</td><td>Nout</td><td>Finet</td></tr>
+          <tr><td>4</td><td>Jan</td><td>Sven</td></tr>
+          <tr><td>5</td><td>Juliette</td><td>Max</td></tr>
+          <tr><td>6</td><td>Ilse</td><td>Dylan</td></tr>
+          <tr><td>7</td><td>Finet</td><td>Nout</td></tr>
+          <tr><td>8</td><td>Sven</td><td>Jan</td></tr>
+        </tbody>
+      </table>
+      <div class="note">Tijd stopt als laatste fietser (ronde 8) over de streep is</div>
     </div>
-    <div style="font-size:11px;color:var(--muted)">Beschikbaar: Veerle, Eelke · Niet: Job</div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Wat is het?</div>
-    <ul class="rules">
-      <li>Estafette: <strong>hardlopen + mountainbiken</strong> (met obstakels)</li>
-      <li>Elke deelnemer: 1x hardlopen EN 1x fietsen</li>
-      <li>Min. 3 vrouwen</li>
-      <li>Wissel via wisselzone</li>
-    </ul>
-  </div>
+  <details open>
+    <summary>👥 Wie doet mee</summary>
+    <div class="details-body">
+      <div class="chip-row">
+        <span class="in">Max</span><span class="in">Dylan</span><span class="in">Nout</span><span class="in">Jan</span>
+        <span class="in">Juliette</span><span class="in">Ilse</span><span class="in">Finet</span><span class="in">Sven</span>
+      </div>
+      <div class="note">Beschikbaar: Veerle, Eelke · Niet: Job</div>
+    </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Onze startindeling</div>
-    <div style="font-size:11px;color:var(--muted);margin-bottom:8px">Volgorde: Max → Juliette → Dylan → Ilse → Nout → Finet → Jan → Sven</div>
-    <table class="team-table">
-      <thead><tr><th>Ronde</th><th>🏃 Hardlopen</th><th>🚴 Fietsen</th></tr></thead>
-      <tbody>
-        <tr><td>1</td><td>Max</td><td>Juliette</td></tr>
-        <tr><td>2</td><td>Dylan</td><td>Ilse</td></tr>
-        <tr><td>3</td><td>Nout</td><td>Finet</td></tr>
-        <tr><td>4</td><td>Jan</td><td>Sven</td></tr>
-        <tr><td>5</td><td>Juliette</td><td>Max</td></tr>
-        <tr><td>6</td><td>Ilse</td><td>Dylan</td></tr>
-        <tr><td>7</td><td>Finet</td><td>Nout</td></tr>
-        <tr><td>8</td><td>Sven</td><td>Jan</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <details>
+    <summary>📋 Regels</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>Estafette: <strong>hardlopen + mountainbiken</strong> afwisselend</li>
+        <li>Elke deelnemer 1x lopen EN 1x fietsen · min. 3 vrouwen</li>
+        <li>Rijden rechts op aangewezen parcours</li>
+        <li>Inhalen verboden bij tegenligger → diskwalificatie</li>
+        <li>3x afsnijden/obstakel missen = diskwalificatie</li>
+        <li>Helm verplicht bij fietsen, pas af als fiets in eigen vak staat</li>
+        <li>Rugnummers dragen (uitgereikt bij risicoformulier)</li>
+      </ul>
+    </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">📦 Meenemen</div>
-    <ul class="rules">
-      <li>Mountainbike per deelnemer</li>
-      <li>Passende fietshelm (verplicht bij fietsen)</li>
-      <li>Lange broek + shirt met lange mouwen (fietsen)</li>
-      <li><strong>32 veiligheidsspelden</strong></li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Regels</div>
-    <ul class="rules">
-      <li>Rijden op aangewezen parcours, aan de rechterkant</li>
-      <li>Inhalen verboden als er een tegenligger langs gaat → diskwalificatie!</li>
-      <li>Gezamenlijke eindtijd telt</li>
-      <li>Rugnummers dragen (worden uitgereikt bij inleveren risicoformulier)</li>
-    </ul>
-  </div>
+  <details>
+    <summary>📦 Meenemen</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>Mountainbike per deelnemer + passende fietshelm</li>
+        <li>Lange broek + shirt lange mouwen (fietsen)</li>
+        <li><strong>32 veiligheidsspelden</strong></li>
+      </ul>
+    </div>
+  </details>
 </div>
 
-<!-- TENNIS CHALLENGE -->
+<!-- TENNIS -->
 <div id="di" class="section">
   <div class="day-header bg-di">
     <div class="emoji">🎾</div>
@@ -515,65 +359,80 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Tijden</div>
     <div class="time-row">
+      <div class="time-item"><div class="time">18:00</div><div class="label">Banen open (oefenen)</div></div>
       <div class="time-item"><div class="time">18:30</div><div class="label">Coachoverleg</div></div>
-      <div class="time-item"><div class="time">18:00</div><div class="label">Oefenen (t/m 18:00)</div></div>
-      <div class="time-item"><div class="time">19:00</div><div class="label">Start</div></div>
-    </div>
-    <div style="margin-top:8px;font-size:12px;color:var(--muted)">
-      19:00 ronde 1 · 19:25 ronde 2 · 19:50 ronde 3 · 20:15 ronde 4 · 20:40 ronde 5 · 21:05 ronde 6
+      <div class="time-item hl"><div class="time">19:00</div><div class="label">Start</div></div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-title">📦 Meenemen</div>
-    <ul class="rules">
-      <li>Min. 2 tennisrackets</li>
-      <li>Sportkleding + gladde buitenschoenen — GEEN voetbalschoenen, spikes of klompen</li>
-    </ul>
-  </div>
+  <div class="alert">Geen voetbalschoenen, spikes of klompen — <strong>gewone buitenschoenen</strong>.</div>
 
-  <div class="card">
-    <div class="card-title">Speluitleg</div>
-    <ul class="rules">
-      <li>2 varianten: normaal tennis + <strong>rolstoeltennis</strong></li>
-      <li>4 koppels (man+vrouw) per team, 5 min per koppel</li>
-      <li>20 minuten per wedstrijd, 2 min wisseltijd ertussen</li>
-      <li>6 wedstrijden per team</li>
-      <li>Rolstoeltennis: bal mag <strong>2x stuiteren</strong></li>
-      <li>Bij <strong>oneven games</strong>: wisselen van kant</li>
-      <li><strong>Min. 2 rackets</strong> mee (verplicht)</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Puntentelling</div>
-    <div class="two-col">
-      <div class="time-item"><div class="time" style="color:var(--do)">3 pt</div><div class="label">Winst</div></div>
-      <div class="time-item"><div class="time" style="color:var(--ma)">1 pt</div><div class="label">Gelijkspel</div></div>
-      <div class="time-item"><div class="time" style="color:var(--muted)">0 pt</div><div class="label">Verlies</div></div>
-      <div class="time-item"><div class="time" style="font-size:16px">Games</div><div class="label">Bij gelijkstand</div></div>
+  <details open>
+    <summary>📅 Rondetijden</summary>
+    <div class="details-body">
+      <table class="team-table">
+        <thead><tr><th>Ronde</th><th>Tijd</th><th>t/m</th></tr></thead>
+        <tbody>
+          <tr><td>Ronde 1</td><td>19:00</td><td>19:20</td></tr>
+          <tr><td>Ronde 2</td><td>19:25</td><td>19:45</td></tr>
+          <tr><td>Ronde 3</td><td>19:50</td><td>20:10</td></tr>
+          <tr><td>Ronde 4</td><td>20:15</td><td>20:35</td></tr>
+          <tr><td>Ronde 5</td><td>20:40</td><td>21:00</td></tr>
+          <tr><td>Ronde 6</td><td>21:05</td><td>21:25</td></tr>
+        </tbody>
+      </table>
+      <div class="note">6 poules van 4 teams · 20 min per wedstrijd + 2 min wisseltijd</div>
     </div>
-    <div style="margin-top:8px;font-size:12px;color:#555">Gewone tennispuntentelling · Golden point bij deuce · Poules: 6 poules van 4 teams</div>
-  </div>
+  </details>
 
-  <div class="alert">Géén voetbalschoenen, spikes, stalen neuzen of klompen — gewone buitenschoenen.</div>
-
-  <div class="card">
-    <div class="card-title">Wie doet mee</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px">
-      <span class="in" style="padding:4px 10px">Max</span>
-      <span class="in" style="padding:4px 10px">Dylan</span>
-      <span class="in" style="padding:4px 10px">Nout</span>
-      <span class="in" style="padding:4px 10px">Jan</span>
-      <span class="in" style="padding:4px 10px">Veerle</span>
-      <span class="in" style="padding:4px 10px">Eelke</span>
-      <span class="in" style="padding:4px 10px">Juliette</span>
-      <span class="in" style="padding:4px 10px">Ilse</span>
+  <details open>
+    <summary>👥 Wie doet mee</summary>
+    <div class="details-body">
+      <div class="chip-row">
+        <span class="in">Max</span><span class="in">Dylan</span><span class="in">Nout</span><span class="in">Jan</span>
+        <span class="in">Veerle</span><span class="in">Eelke</span><span class="in">Juliette</span><span class="in">Ilse</span>
+      </div>
+      <div class="note">Beschikbaar: Finet, Job · Niet: Sven</div>
     </div>
-    <div style="font-size:11px;color:var(--muted)">Beschikbaar: Finet, Job · Niet: Sven</div>
-  </div>
+  </details>
+
+  <details>
+    <summary>📋 Speluitleg</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>2 varianten: normaal tennis + <strong>rolstoeltennis</strong></li>
+        <li>4 koppels (M+V) per team · 5 min per koppel</li>
+        <li>6 wedstrijden per team totaal</li>
+        <li>Rolstoeltennis: bal mag <strong>2× stuiteren</strong></li>
+        <li>Bij oneven games: wisselen van kant</li>
+        <li>Min. 2 rackets verplicht mee</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>🏆 Puntentelling</summary>
+    <div class="details-body">
+      <div class="two-col" style="margin-bottom:8px">
+        <div class="time-item"><div class="time" style="color:var(--do)">3 pt</div><div class="label">Winst</div></div>
+        <div class="time-item"><div class="time" style="color:var(--ma)">1 pt</div><div class="label">Gelijkspel</div></div>
+        <div class="time-item"><div class="time" style="color:var(--muted)">0 pt</div><div class="label">Verlies</div></div>
+        <div class="time-item"><div class="time" style="font-size:16px">Games</div><div class="label">Bij gelijkstand</div></div>
+      </div>
+      <div class="note">Gewone tennistelling · Golden point bij deuce</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📦 Meenemen</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>Min. 2 tennisrackets</li>
+        <li>Sportkleding + gladde buitenschoenen</li>
+      </ul>
+    </div>
+  </details>
 </div>
 
 <!-- OBSTACLE RUN -->
@@ -587,105 +446,71 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Tijden</div>
     <div class="time-row">
       <div class="time-item"><div class="time">18:00</div><div class="label">Verkenning parcours</div></div>
-      <div class="time-item"><div class="time">19:00</div><div class="label">Eerste team start</div></div>
-      <div class="time-item" style="background:#d4edda"><div class="time" style="color:var(--do)">19:12</div><div class="label">Wij starten</div></div>
+      <div class="time-item"><div class="time">19:00</div><div class="label">1e team start</div></div>
+      <div class="time-item hl"><div class="time">19:12</div><div class="label">★ Wij starten</div></div>
       <div class="time-item"><div class="time">20:30</div><div class="label">Prijsuitreiking</div></div>
     </div>
-    <div style="margin-top:8px;font-size:12px;color:var(--muted)">Ingang via Speelpark De Swaan · Ruime parkeerplaats aanwezig</div>
+    <div class="note" style="margin-top:8px">Ingang via Speelpark De Swaan · Interval 3 min per team · Ruime parkeerplaats</div>
   </div>
 
-  <div class="alert red">Rugzak van het team heeft startbewijs → wordt gescand bij START en FINISH voor de tijd.</div>
+  <div class="alert red">Teamrugzak met startbewijs wordt gescand bij START en FINISH — tijd loopt zodra je scant!</div>
 
-  <div class="card">
-    <div class="card-title">Wie doet mee</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px">
-      <span class="in" style="padding:4px 10px">Max</span>
-      <span class="in" style="padding:4px 10px">Dylan</span>
-      <span class="in" style="padding:4px 10px">Nout</span>
-      <span class="in" style="padding:4px 10px">Jan</span>
-      <span class="in" style="padding:4px 10px">Eelke</span>
-      <span class="in" style="padding:4px 10px">Juliette</span>
-      <span class="in" style="padding:4px 10px">Ilse</span>
-      <span class="in" style="padding:4px 10px">Sven</span>
+  <details open>
+    <summary>👥 Wie doet mee</summary>
+    <div class="details-body">
+      <div class="chip-row">
+        <span class="in">Max</span><span class="in">Dylan</span><span class="in">Nout</span><span class="in">Jan</span>
+        <span class="in">Eelke</span><span class="in">Juliette</span><span class="in">Ilse</span><span class="in">Sven</span>
+      </div>
+      <div class="note">Beschikbaar: Finet · <span class="maybe">Job ?</span> · Niet: Veerle</div>
     </div>
-    <div style="font-size:11px;color:var(--muted)">Beschikbaar: Finet · Niet: Veerle</div>
-    <span class="maybe" style="padding:4px 10px;margin-top:4px;display:inline-block">Job ?</span>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">📦 Meenemen</div>
-    <ul class="rules">
-      <li>1 stevige teamrugzak (voor startbewijs)</li>
-      <li>Handdoek + stel droge kleding</li>
-      <li>Kleding die nat en vies mag worden</li>
-      <li>Sportschoenen ZONDER noppen (trail of flat)</li>
-    </ul>
-  </div>
+  <details open>
+    <summary>🚧 De 12 obstacles</summary>
+    <div class="details-body">
+      <div class="spel-block border-do"><div class="spel-naam">1+2. Springkussen</div><ul><li>Twee luchtkussens — <strong>schoenen verplicht uit!</strong></li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">3. Kruipnet + Zakspringen</div><ul><li>Onder net door kruipen · dan met 4 pers. in een zak springen</li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">4. Trekkerbanden</div><ul><li>Verplaatsen van trekkerbanden als team</li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">5. Suppen 💧</div><ul><li>Waterobstakel — heel team via SUP naar overkant · max 2 per keer · <strong>kans op nat worden!</strong></li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">6. Glijbaan</div><ul><li>Omhoog via touw, dan naar beneden glijden</li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">7. Muur</div><ul><li>Schaal de muur · help teamgenoten erover</li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">8. Boomstammen</div><ul><li>Verplaatsen als heel team door parcours</li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">9. Parkour</div><ul><li>Springen, klimmen — <strong>vloer niet raken!</strong></li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">10. Boogschieten 🏹</div><ul><li>Doel raken met pijl en boog — anders mag je niet door</li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">11. Bandenrace</div><ul><li>Race zo snel mogelijk door de banden</li></ul></div>
+      <div class="spel-block border-do"><div class="spel-naam">12. Tokkelbaan 🎉</div><ul><li>Slotobstakel — 1 persoon tegelijk over de tokkelbaan naar de finish</li></ul></div>
+    </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">De 12 Obstacles</div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">1+2. Springkussen</div>
-      <ul><li>Twee luchtkussens — <strong>schoenen verplicht uit!</strong></li></ul>
+  <details>
+    <summary>📋 Spelregels</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>Heel team start SAMEN bij elk obstakel — wachten verplicht</li>
+        <li>Startbewijs vastzetten aan teamrugzak</li>
+        <li>Schoenen uit bij de twee luchtkussens</li>
+        <li>Geen noppenschoenen op het parcours</li>
+        <li>Begeleider loopt mee voor tijdregistratie</li>
+        <li>Zwemdiploma verplicht</li>
+      </ul>
+      <div class="alert" style="margin-top:10px;margin-bottom:0">Na afloop: bar + muziek op buitenterras. Supporters welkom!</div>
     </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">3. Kruipnet + Zakspringen</div>
-      <ul><li>Onder net door kruipen, dan 4 pers. in een zak springen</li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">4. Trekkerbanden</div>
-      <ul><li>Verplaatsen van trekkerbanden als team</li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">5. Suppen 💧</div>
-      <ul><li>Waterobstakel — heel team naar overkant via SUP, max 2 per keer. <strong>Kans op nat worden!</strong></li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">6. Glijbaan</div>
-      <ul><li>Zo snel mogelijk naar boven via touw</li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">7. Muur</div>
-      <ul><li>Schaal de muur, help teamgenoten erover</li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">8. Boomstammen</div>
-      <ul><li>Verplaatsen als heel team door parcours</li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">9. Parkour</div>
-      <ul><li>Springen, klimmen, bewegen — <strong>vloer niet raken!</strong></li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">10. Boogschieten 🏹</div>
-      <ul><li>Doel raken met pijl en boog — anders mag je niet door naar volgend obstakel</li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">11. Bandenrace</div>
-      <ul><li>Race zo snel mogelijk door de banden</li></ul>
-    </div>
-    <div class="spel-block border-do">
-      <div class="spel-naam">12. Tokkelbaan 🎉</div>
-      <ul><li>Slotobstakel — vlieg over de tokkelbaan naar de finish, 1 persoon tegelijk</li></ul>
-    </div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Spelregels</div>
-    <ul class="rules">
-      <li>Heel team start SAMEN bij elk obstakel — wachten op teamgenoten</li>
-      <li>Startbewijs bevestigen aan teamrugzak</li>
-      <li>Schoenen UIT bij de twee luchtkussens</li>
-      <li>Geen noppenschoenen op het parcours</li>
-      <li>Begeleider loopt mee voor tijdregistratie</li>
-      <li>Zwemdiploma verplicht (teken je formulier hiervoor)</li>
-    </ul>
-  </div>
-
-  <div class="alert">Na afloop: bar + muziek op buitenterras. Supporters welkom!</div>
+  <details>
+    <summary>📦 Meenemen</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>1 stevige teamrugzak (voor startbewijs)</li>
+        <li>Handdoek + stel droge kleding</li>
+        <li>Kleding die nat en vies mag worden</li>
+        <li>Sportschoenen ZONDER noppen (trail of flat)</li>
+      </ul>
+    </div>
+  </details>
 </div>
 
 <!-- DE ALLESKUNNER -->
@@ -699,138 +524,124 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Tijden</div>
     <div class="time-row">
       <div class="time-item"><div class="time">18:30</div><div class="label">Coachoverleg</div></div>
-      <div class="time-item"><div class="time">19:00</div><div class="label">Start</div></div>
+      <div class="time-item hl"><div class="time">19:00</div><div class="label">Start</div></div>
       <div class="time-item"><div class="time">20:45</div><div class="label">Laatste ronde</div></div>
       <div class="time-item"><div class="time">21:45</div><div class="label">Prijsuitreiking</div></div>
     </div>
-    <div style="margin-top:8px;font-size:12px;color:var(--muted)">10 min per baan · 5 min wisseltijd · 1 pauze ertussen</div>
+    <div class="note" style="margin-top:8px">10 min per baan · 5 min wisseltijd · 1 pauze ertussen</div>
   </div>
 
-  <div class="alert red">Schoenen VERPLICHT aan (i.v.m. wonden kunstgras). Meenemen: 4 padelrackets. Volgorde M-M-V-M-M-V-M-M bij banen 1, 5, 8!</div>
+  <div class="alert red">Schoenen VERPLICHT aan (kunstgras). Meenemen: 4 padelrackets. Volgorde M-M-V-M-M-V bij banen 1, 5 en 8!</div>
 
-  <div class="card">
-    <div class="card-title">Wie doet mee</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px">
-      <span class="in" style="padding:4px 10px">Dylan</span>
-      <span class="in" style="padding:4px 10px">Job</span>
-      <span class="in" style="padding:4px 10px">Nout</span>
-      <span class="in" style="padding:4px 10px">Jan</span>
-      <span class="in" style="padding:4px 10px">Veerle</span>
-      <span class="in" style="padding:4px 10px">Juliette</span>
-      <span class="in" style="padding:4px 10px">Finet</span>
-      <span class="in" style="padding:4px 10px">Sven</span>
+  <details open>
+    <summary>👥 Wie doet mee</summary>
+    <div class="details-body">
+      <div class="chip-row">
+        <span class="in">Dylan</span><span class="in">Job</span><span class="in">Nout</span><span class="in">Jan</span>
+        <span class="in">Veerle</span><span class="in">Juliette</span><span class="in">Finet</span><span class="in">Sven</span>
+      </div>
+      <div class="note">Beschikbaar: Max, Eelke, Ilse</div>
     </div>
-    <div style="font-size:11px;color:var(--muted)">Beschikbaar: Max, Eelke, Ilse</div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">📦 Meenemen</div>
-    <ul class="rules">
-      <li>4 padelrackets</li>
-      <li>Sportkleding + schoenen (kunstgras, verplicht aan)</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-title">Baan 1 — De Boer(innen)</div>
-    <div class="spel-block border-vr">
-      <ul>
-        <li>Kettlebell carry: M = 2x 20kg (laag langs lichaam) · V = 1x 20kg (voor borst/buik)</li>
-        <li>Baseline naar overkant en terug = 1 punt</li>
-        <li><strong>Volgorde verplicht: M-M-V-M-M-V…</strong> (afwijken = strafpunt)</li>
-        <li>Laatste 2 minuten: dubbele punten (volgorde vervalt dan)</li>
-        <li>Bal halverwege bij bel = telt niet mee</li>
-      </ul>
+  <details>
+    <summary>🌾 Baan 1 — De Boer(innen)</summary>
+    <div class="details-body">
+      <div class="spel-block border-vr"><ul>
+        <li>Kettlebell carry: M = 2× 20 kg (laag) · V = 1× 20 kg (voor borst)</li>
+        <li>Baseline → overkant → terug = 1 punt · <strong>Volgorde: M-M-V-M-M-V…</strong></li>
+        <li>Laatste 2 min: dubbele punten, volgorde vervalt</li>
+        <li>Halverwege bij bel = telt niet mee</li>
+      </ul></div>
     </div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Baan 2+3 — De Strandganger</div>
-    <div class="spel-block border-vr">
-      <ul>
-        <li>Padelracket + volleybalnet · 4 vs 4 per koppeling</li>
-        <li>Roze kant serveert onderhands, van achter baseline, om de beurt</li>
-        <li>Service in net/uit = punt voor tegenpartij</li>
-        <li><strong>Geen let</strong> — bal raakt net bij service → doorspelen</li>
-        <li>Zwarte kant ontvangt buiten het servicevak</li>
-        <li>Smash mag, maar racket niet over het net</li>
-        <li>Na 3 min: fluitsignaal = meteen stoppen, punt niet uitspelen</li>
+  <details>
+    <summary>🏖️ Baan 2+3 — De Strandganger</summary>
+    <div class="details-body">
+      <div class="spel-block border-vr"><ul>
+        <li>Padelracket + volleybalnet · 4 vs 4</li>
+        <li>Roze kant serveert onderhands achter baseline, om de beurt</li>
+        <li><strong>Geen let</strong> bij service in net → doorspelen</li>
         <li>Bal op grond of net/uit = punt tegenpartij</li>
-        <li>Totale punten bepalen ranking</li>
-      </ul>
+        <li>Smash mag, racket niet over het net</li>
+        <li>Fluitsignaal = stoppen, punt niet uitspelen</li>
+      </ul></div>
     </div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Padelbanen 1-2-3 — De Padeller</div>
-    <div class="spel-block border-vr">
-      <ul>
-        <li>2 vs 2 padel, eigen 4 padelrackets meenemen</li>
-        <li>8 pers per team, wissel na 5 minuten</li>
+  <details>
+    <summary>🎾 Padelbanen 1-2-3 — De Padeller</summary>
+    <div class="details-body">
+      <div class="spel-block border-vr"><ul>
+        <li>2 vs 2 padel · 8 pers per team, wissel na 5 min</li>
+        <li>Eigen 4 padelrackets meenemen</li>
         <li>Roze kant begint met serveren (schuin in servicevak)</li>
-        <li>Service mag na stuit het gaas NIET raken</li>
+        <li>Service na stuit: gaas NIET raken</li>
         <li>Bal raakt voor stuit gaas/glas = uit</li>
-        <li>Totale punten over alle duels bepalen ranking</li>
-      </ul>
+      </ul></div>
     </div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Baan 5 — De Zigzagger</div>
-    <div class="spel-block border-vr">
-      <ul>
-        <li>Tennisbal op hoedje van links naar rechts brengen via zigzagparcours</li>
-        <li>Tik net aan, ren buiten de baan terug</li>
-        <li>Handklap in hoepel = start volgende deelnemer</li>
-        <li>Bal valt van hoedje: zelf corrigeren, dan pas verder</li>
-        <li><strong>Volgorde verplicht: M-M-V-M-M-V…</strong></li>
-        <li>Iedere handklap in hoepel = 1 punt</li>
-      </ul>
+  <details>
+    <summary>⚡ Baan 5 — De Zigzagger</summary>
+    <div class="details-body">
+      <div class="spel-block border-vr"><ul>
+        <li>Tennisbal op hoedje van links naar rechts via zigzagparcours</li>
+        <li>Tik net aan, ren buiten baan terug · handklap in hoepel = volgende</li>
+        <li>Bal valt: zelf corrigeren voor je verder gaat</li>
+        <li><strong>Volgorde: M-M-V-M-M-V…</strong> · 1 handklap = 1 punt</li>
+      </ul></div>
     </div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Baan 6 — De Minitennisser</div>
-    <div class="spel-block border-vr">
-      <ul>
+  <details>
+    <summary>🎾 Baan 6 — De Minitennisser</summary>
+    <div class="details-body">
+      <div class="spel-block border-vr"><ul>
         <li>Tennis 2v2 met zachte rode ballen</li>
-        <li>Roze kant serveert onderhands, om de beurt</li>
+        <li>Roze kant serveert onderhands om de beurt</li>
         <li><strong>Let bij 2e service telt wél</strong> (anders dan normaal tennis!)</li>
-        <li>Na 5 min: andere 4 spelers van het team erin</li>
-        <li>Fluitsignaal = AF, punt niet uitspelen</li>
-        <li>Totale punten bepalen ranking</li>
-      </ul>
+        <li>Na 5 min: andere 4 spelers erin · fluitsignaal = af</li>
+      </ul></div>
     </div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Baan 7 — De Sluipschutter</div>
-    <div class="spel-block border-vr">
-      <ul>
+  <details>
+    <summary>🎯 Baan 7 — De Sluipschutter</summary>
+    <div class="details-body">
+      <div class="spel-block border-vr"><ul>
         <li>Tijgeren op handen en voeten van hoepel naar hoepel</li>
         <li>Pittenzakje gooien op twisterveld (kleuren = punten)</li>
         <li>Teruglopen, handklap in hoepel = volgende</li>
-        <li>Gegooide punten tellen op bij ranking</li>
-      </ul>
+      </ul></div>
     </div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">Baan 8 — De Krachtpatser</div>
-    <div class="spel-block border-vr">
-      <ul>
-        <li>Bal gaat mee door het parcours, overdragen aan volgende deelnemer</li>
-        <li>10x Wallball 6kg (squat + gooien): V = 2,25m · M = 3m. Billen moeten emmer raken bij squat!</li>
-        <li>10x Burpees: buik op de grond, springen = voeten van grond + armen boven hoofd</li>
-        <li>10x Ball slam 6kg: bal boven hoofd, met kracht in hoepel gooien. Laten vallen = fout, opnieuw</li>
+  <details>
+    <summary>💪 Baan 8 — De Krachtpatser</summary>
+    <div class="details-body">
+      <div class="spel-block border-vr"><ul>
         <li><strong>Volgorde: M-M-V-M-M-V…</strong></li>
+        <li>10× Wallball 6 kg: V = 2,25 m · M = 3 m · billen raken emmer bij squat</li>
+        <li>10× Burpees: buik op grond, sprong met armen boven hoofd</li>
+        <li>10× Ball slam 6 kg: boven hoofd in hoepel · laten vallen = opnieuw</li>
         <li>Balwissel bij volgende deelnemer = 1 punt</li>
+      </ul></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📦 Meenemen</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>4 padelrackets</li>
+        <li>Sportkleding + schoenen (kunstgras, verplicht aan)</li>
       </ul>
     </div>
-  </div>
+  </details>
 </div>
 
 <!-- ZESKAMP -->
@@ -844,21 +655,19 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Tijden</div>
     <div class="time-row">
       <div class="time-item"><div class="time">12:30</div><div class="label">Coachoverleg</div></div>
       <div class="time-item"><div class="time">13:00</div><div class="label">Teams aanwezig</div></div>
-      <div class="time-item"><div class="time">13:30</div><div class="label">Start</div></div>
-      <div class="time-item"><div class="time">16:30</div><div class="label">DJ Tony Beats</div></div>
-      <div class="time-item"><div class="time">18:30</div><div class="label">Prijsuitreiking + totaalwinnaar</div></div>
-      <div class="time-item"><div class="time">19:00</div><div class="label">🇳🇱 NL vs Zweden</div></div>
+      <div class="time-item hl"><div class="time">13:30</div><div class="label">Start</div></div>
+      <div class="time-item"><div class="time">18:30</div><div class="label">Prijsuitreiking + winnaar</div></div>
     </div>
+    <div class="note" style="margin-top:8px">DJ Tony Beats vanaf 16:30 · 🇳🇱 NL–Zweden om 19:00</div>
   </div>
 
-  <div class="alert red">Zwemdiploma verplicht — teken formulier hiervoor. Duiken/springen bij prutrace verboden!</div>
+  <div class="alert red">Zwemdiploma verplicht — teken formulier. Duiken/springen bij prutrace verboden!</div>
 
-  <div class="card" style="border: 2px solid var(--za)">
-    <div class="card-title" style="color:var(--za)">🗺️ Ons rondeschema</div>
+  <div class="card highlight-card">
+    <div class="card-title" style="color:var(--za)">🗺️ Ons rondeschema — Kleedkamer 1</div>
     <table class="team-table">
       <thead><tr><th>Tijd</th><th>Continent</th><th>Spel</th></tr></thead>
       <tbody>
@@ -870,116 +679,108 @@
         <tr><td><strong>16:25</strong></td><td>🐒 Afrika</td><td>Feed the Monkey</td></tr>
       </tbody>
     </table>
-    <div style="margin-top:8px;font-size:11px;color:var(--muted)">Kleedkamer: <strong>1</strong> · Elke ronde 20 min actief · 15 min looptijd/wisseltijd ertussen</div>
+    <div class="note">Elke ronde 20 min actief · 15 min looptijd/wisseltijd ertussen</div>
   </div>
 
-  <div class="card">
-    <div class="card-title">Wie doet mee</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px">
-      <span class="in" style="padding:4px 10px">Max</span>
-      <span class="in" style="padding:4px 10px">Dylan</span>
-      <span class="in" style="padding:4px 10px">Nout</span>
-      <span class="in" style="padding:4px 10px">Alek</span>
-      <span class="in" style="padding:4px 10px">Eelke</span>
-      <span class="in" style="padding:4px 10px">Ilse</span>
-      <span class="in" style="padding:4px 10px">Finet</span>
-      <span class="in" style="padding:4px 10px">Sven</span>
+  <details open>
+    <summary>👥 Wie doet mee</summary>
+    <div class="details-body">
+      <div class="chip-row">
+        <span class="in">Max</span><span class="in">Dylan</span><span class="in">Nout</span><span class="in">Alek</span>
+        <span class="in">Eelke</span><span class="in">Ilse</span><span class="in">Finet</span><span class="in">Sven</span>
+      </div>
+      <div class="note">Beschikbaar: Veerle, Juliette · Niet: Job, Jan</div>
     </div>
-    <div style="font-size:11px;color:var(--muted)">Beschikbaar: Veerle, Juliette · Niet: Job, Jan</div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">📦 Meenemen</div>
-    <ul class="rules">
-      <li>Kleding die nat en vies mag worden</li>
-      <li>Sportschoenen die vies mogen worden</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🌊 Oceanië — Waterplay 6.0</div>
-    <div class="spel-block border-za">
-      <ul>
-        <li>8 deelnemers</li>
-        <li>Bassin vullen via water doorgeven</li>
-        <li>Pingpongbal ophalen → som oplossen → slot vrijspelen</li>
-        <li>Skippybal met ringen → parcours → ringen gooien voor punten</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🌿 Zuid-Amerika — Zeskamp Estafette (Prutrace)</div>
-    <div class="spel-block border-za">
-      <ul>
-        <li>Via kratten door de Favela zonder de grond te raken</li>
+  <details>
+    <summary>🌿 Zuid-Amerika — Estafette (Prutrace)</summary>
+    <div class="details-body">
+      <div class="spel-block border-za"><ul>
+        <li>Via kratten door de Favela zonder grond te raken</li>
         <li>6 deelnemers geblinddoekt: samen iemand op plank door Andesgebergte tillen</li>
-        <li>Die persoon bemachtigt kaartjes van voetbalspelers</li>
-        <li>Team legt voetbalspelers bij juiste landen (snelheid = seconden)</li>
-        <li>Afsluitend: heel team door Amazone-regenwoud (prutrace)</li>
-      </ul>
+        <li>Die persoon stuurt team om kaartjes van voetbalspelers te pakken</li>
+        <li>Kaarten bij juiste landen leggen (geen mobiel!) — elk juist land = 10 sec aftrek</li>
+        <li>Heel team door Amazone-moeras naar finish → tijd stopt · laagste tijd wint</li>
+      </ul></div>
     </div>
-  </div>
+  </details>
 
-  <div class="card">
-    <div class="card-title">🥢 Azië — SudoChop</div>
-    <div class="spel-block border-za">
-      <ul>
-        <li>Groot formaat Sudoku</li>
-        <li>Team bepaalt welk cijfer in leeg vak</li>
-        <li>2 deelnemers (wisselend) halen het cijfer met grote chopsticks</li>
-        <li>Vallen = opnieuw beginnen</li>
-        <li>Herhalen tot Sudoku klaar is</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🐒 Afrika — Feed the Monkey</div>
-    <div class="spel-block border-za">
-      <ul>
-        <li>Steeds 1 speler (wisselend)</li>
-        <li>Parcours: stapstenen → balanceren over bank → tijgeren onder touwen door → krattenpad (2 kratjes)</li>
-        <li>Bananenboom: klim en pak een banaan</li>
-        <li>Ruil banaan voor snoepbanaantjes → gooien in mond van apen voor punten</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">🏈 Noord-Amerika — Mik m'erin</div>
-    <div class="spel-block border-za">
-      <ul>
-        <li>Team = 2x 4-tallen</li>
-        <li>Hoefijzer gooien (4) om de paal</li>
-        <li>Cornhole: 2 zakken per teamlid, punten scoren</li>
-        <li>Latjetrap: scoren door lat te raken</li>
-        <li>Ieder teamlid schiet 2x</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-title">❄️ Antarctica — Let it Snow</div>
-    <div class="spel-block border-za">
-      <ul>
-        <li>Stormbaan voltooien in het groen (springkussen)</li>
+  <details>
+    <summary>❄️ Antarctica — Let it Snow</summary>
+    <div class="details-body">
+      <div class="spel-block border-za"><ul>
+        <li>Stormbaan voltooien op springkussen</li>
         <li>Omhoog op de winterse piste, met slee naar beneden</li>
-        <li>Afronding: sneeuwbal gooien op sneeuwpop voor punten</li>
+        <li>Sneeuwbal gooien op sneeuwpop voor punten</li>
+      </ul></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🌊 Oceanië — Waterplay 6.0</summary>
+    <div class="details-body">
+      <div class="spel-block border-za"><ul>
+        <li>Water doorgeven om bassin te vullen</li>
+        <li>Pingpongbal vrijspelen → som oplossen → slot kraken</li>
+        <li>Op skippybal met ringen door parcours · ringen gooien voor punten</li>
+        <li>Herhaalt zich tot tijd op is · meeste punten wint</li>
+      </ul></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🏈 Noord-Amerika — Mik m'erin</summary>
+    <div class="details-body">
+      <div class="spel-block border-za"><ul>
+        <li>Team = 2× 4-tallen (geen wissel tussen onderdelen)</li>
+        <li>Hoefijzer gooien om de paal</li>
+        <li>Cornhole: 2 zakjes per teamlid · op bord = 1 pt · door gat = 3 pt</li>
+        <li>Schieten op E-goal: lat E-goal = 5 pt · lat mini = 3 pt · in mini = 1 pt</li>
+      </ul></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🥢 Azië — SudoChop</summary>
+    <div class="details-body">
+      <div class="spel-block border-za"><ul>
+        <li>Reuze Sudoku (1,20 × 1,20 m)</li>
+        <li>2 deelnemers halen met grote chopsticks 1 cijfer tegelijk op</li>
+        <li>Valt het cijfer: terug naar startpunt</li>
+        <li>Cijfer juist = 1 pt · rij/kolom compleet = 3 pt · vierkant compleet = 5 pt</li>
+      </ul></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>🐒 Afrika — Feed the Monkey</summary>
+    <div class="details-body">
+      <div class="spel-block border-za"><ul>
+        <li>Steeds 1 speler: stapstenen → bank balanceren → tijgeren onder touwen → krattenpad</li>
+        <li>Bananenboom beklimmen, banaan pakken</li>
+        <li>Banaan inruilen voor snoepbanaantjes → gooien in bekken van apen (1/3/5 pt)</li>
+        <li>Na beurt volgende aantikken, loopt continu door</li>
+      </ul></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>📦 Meenemen</summary>
+    <div class="details-body">
+      <ul class="rules">
+        <li>Kleding die nat en vies mag worden + reserveset droog</li>
+        <li>Sportschoenen die vies mogen worden</li>
       </ul>
     </div>
-  </div>
+  </details>
 </div>
 
-<!-- TEAMINDELING -->
+<!-- INDELING -->
 <div id="indeling" class="section">
   <div class="card">
-    <div class="card-title">Teamindeling per dag</div>
-    <div class="disclaimer">Groen = ingedeeld · Blauw = beschikbaar maar niet ingepland · Geel = onzeker · Grijs = niet beschikbaar</div>
-  </div>
-
-  <div class="card">
     <div class="card-title">Indeling overzicht</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:10px">Groen = ingedeeld · Blauw = beschikbaar · Geel = onzeker · Grijs = niet</div>
     <table class="team-table">
       <thead>
         <tr>
@@ -993,16 +794,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Max</strong></td><td><span class="avail">Besc.</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">Besc.</span></td><td><span class="in">✓</span></td></tr>
+        <tr><td><strong>Max</strong></td><td><span class="avail">B</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">B</span></td><td><span class="in">✓</span></td></tr>
         <tr><td><strong>Dylan</strong></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td></tr>
-        <tr><td><strong>Job</strong></td><td><span class="in">✓</span></td><td><span class="out">—</span></td><td><span class="avail">Besc.</span></td><td><span class="maybe">?</span></td><td><span class="in">✓</span></td><td><span class="out">—</span></td></tr>
+        <tr><td><strong>Job</strong></td><td><span class="in">✓</span></td><td><span class="out">—</span></td><td><span class="avail">B</span></td><td><span class="maybe">?</span></td><td><span class="in">✓</span></td><td><span class="out">—</span></td></tr>
         <tr><td><strong>Nout</strong></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td></tr>
         <tr><td><strong>Jan</strong></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="out">—</span></td></tr>
-        <tr><td><strong>Veerle</strong></td><td><span class="out">—</span></td><td><span class="avail">Besc.</span></td><td><span class="in">✓</span></td><td><span class="out">—</span></td><td><span class="in">✓</span></td><td><span class="avail">Besc.</span></td></tr>
-        <tr><td><strong>Eelke</strong></td><td><span class="in">✓</span></td><td><span class="avail">Besc.</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">Besc.</span></td><td><span class="in">✓</span></td></tr>
-        <tr><td><strong>Juliette</strong></td><td><span class="out">—</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">Besc.</span></td></tr>
-        <tr><td><strong>Ilse</strong></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">Besc.</span></td><td><span class="in">✓</span></td></tr>
-        <tr><td><strong>Finet</strong></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">Besc.</span></td><td><span class="avail">Besc.</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td></tr>
+        <tr><td><strong>Veerle</strong></td><td><span class="out">—</span></td><td><span class="avail">B</span></td><td><span class="in">✓</span></td><td><span class="out">—</span></td><td><span class="in">✓</span></td><td><span class="avail">B</span></td></tr>
+        <tr><td><strong>Eelke</strong></td><td><span class="in">✓</span></td><td><span class="avail">B</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">B</span></td><td><span class="in">✓</span></td></tr>
+        <tr><td><strong>Juliette</strong></td><td><span class="out">—</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">B</span></td></tr>
+        <tr><td><strong>Ilse</strong></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">B</span></td><td><span class="in">✓</span></td></tr>
+        <tr><td><strong>Finet</strong></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="avail">B</span></td><td><span class="avail">B</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td></tr>
         <tr><td><strong>Sven</strong></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="out">—</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td><td><span class="in">✓</span></td></tr>
         <tr><td><strong>Alek</strong></td><td><span class="out">—</span></td><td><span class="out">—</span></td><td><span class="out">—</span></td><td><span class="out">—</span></td><td><span class="out">—</span></td><td><span class="in">✓</span></td></tr>
       </tbody>
@@ -1010,63 +811,41 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Tellijst per dag (ingedeeld)</div>
-    <div class="spel-block">
-      <div class="spel-naam">🏐 Tsjoekbal (zo 14/6)</div>
-      <ul>
-        <li>Max, Dylan, Job, Nout, Jan, Eelke, Ilse, Finet, Sven <strong>(9 spelers)</strong></li>
-        <li>Vrouwen ingedeeld: Ilse, Finet — let op: min. 2 in het veld vereist</li>
-        <li>Niet: Veerle, Juliette</li>
-      </ul>
-    </div>
-    <div class="spel-block">
-      <div class="spel-naam">🚴 Fit Challenge (ma 15/6)</div>
-      <ul>
-        <li>Max, Dylan, Nout, Jan, Veerle, Eelke, Juliette, Ilse, Finet, Sven <strong>(10 spelers → 8 op formulier)</strong></li>
-        <li>Vrouwen: Veerle, Juliette, Ilse, Finet ✓</li>
-        <li>Niet: Job</li>
-      </ul>
-    </div>
-    <div class="spel-block">
-      <div class="spel-naam">🎾 Tennis (di 16/6)</div>
-      <ul>
-        <li>Max, Dylan, Job, Nout, Jan, Veerle, Eelke, Juliette, Ilse, Finet <strong>(10 spelers → 8 op formulier)</strong></li>
-        <li>Niet: Sven</li>
-      </ul>
-    </div>
-    <div class="spel-block">
-      <div class="spel-naam">🏃 Obstacle Run (do 18/6)</div>
-      <ul>
-        <li>Max, Dylan, Nout, Jan, Eelke, Juliette, Ilse, Finet, Sven <strong>(9 spelers)</strong></li>
-        <li>Job: onzeker (?)</li>
-        <li>Niet: Veerle</li>
-      </ul>
-    </div>
-    <div class="spel-block">
-      <div class="spel-naam">🏅 De Alleskunner (vr 19/6)</div>
-      <ul>
-        <li>Max, Dylan, Job, Nout, Jan, Veerle, Eelke, Juliette, Ilse, Finet, Sven <strong>(iedereen → 8 op formulier)</strong></li>
-      </ul>
-    </div>
-    <div class="spel-block">
-      <div class="spel-naam">🌍 Zeskamp (za 20/6)</div>
-      <ul>
-        <li>Max, Dylan, Nout, Alek, Veerle, Eelke, Juliette, Ilse, Finet, Sven <strong>(10 spelers → 8 op formulier)</strong></li>
-        <li>Niet: Job, Jan</li>
-      </ul>
-    </div>
+    <div class="card-title">Per dag</div>
+    <div class="spel-block"><div class="spel-naam">🏐 Tsjoekbal zo 14/6</div><ul>
+      <li>Dylan, Job, Nout, Jan, Eelke, Ilse, Finet, Sven <strong>(8)</strong></li>
+      <li>Vrouwen: Ilse, Finet — min. 2 in veld vereist · Beschikbaar: Max</li>
+    </ul></div>
+    <div class="spel-block"><div class="spel-naam">🚴 Fit Challenge ma 15/6</div><ul>
+      <li>Max, Dylan, Nout, Jan, Juliette, Ilse, Finet, Sven <strong>(8)</strong></li>
+      <li>Vrouwen: Juliette, Ilse, Finet ✓ · Beschikbaar: Veerle, Eelke · Niet: Job</li>
+    </ul></div>
+    <div class="spel-block"><div class="spel-naam">🎾 Tennis di 16/6</div><ul>
+      <li>Max, Dylan, Nout, Jan, Veerle, Eelke, Juliette, Ilse <strong>(8)</strong></li>
+      <li>Beschikbaar: Finet, Job · Niet: Sven</li>
+    </ul></div>
+    <div class="spel-block"><div class="spel-naam">🏃 Obstacle Run do 18/6</div><ul>
+      <li>Max, Dylan, Nout, Jan, Eelke, Juliette, Ilse, Sven <strong>(8)</strong></li>
+      <li>Beschikbaar: Finet · Job: ? · Niet: Veerle</li>
+    </ul></div>
+    <div class="spel-block"><div class="spel-naam">🏅 De Alleskunner vr 19/6</div><ul>
+      <li>Dylan, Job, Nout, Jan, Veerle, Juliette, Finet, Sven <strong>(8)</strong></li>
+      <li>Beschikbaar: Max, Eelke, Ilse</li>
+    </ul></div>
+    <div class="spel-block"><div class="spel-naam">🌍 Zeskamp za 20/6</div><ul>
+      <li>Max, Dylan, Nout, Alek, Eelke, Ilse, Finet, Sven <strong>(8)</strong></li>
+      <li>Beschikbaar: Veerle, Juliette · Niet: Job, Jan</li>
+    </ul></div>
   </div>
 </div>
 
 <!-- SHIRTS -->
 <div id="shirts" class="section">
   <div class="card">
-    <div class="card-title">Shirts & Rugnummers</div>
+    <div class="card-title">Shirts &amp; Rugnummers</div>
     <div class="alert green">Shirts van Quinty (#7, S/M) en Lois (#4, M) gaan naar Finet en Juliette.</div>
     <table class="shirt-table">
-      <thead>
-        <tr><th>#</th><th>Naam</th><th>Maat</th><th>✓</th></tr>
-      </thead>
+      <thead><tr><th>#</th><th>Naam</th><th>Maat</th><th>✓</th></tr></thead>
       <tbody>
         <tr><td class="num">3</td><td>Ilse</td><td><span class="maat-badge">M</span></td><td>☐</td></tr>
         <tr><td class="num">4</td><td>Juliette</td><td><span class="maat-badge">M</span></td><td>☐</td></tr>
@@ -1085,11 +864,11 @@
 </div>
 
 <script>
-function showTab(id) {
+function showTab(id, btn) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  event.currentTarget.classList.add('active');
+  btn.classList.add('active');
 }
 </script>
 </body>
